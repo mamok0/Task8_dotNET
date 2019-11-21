@@ -1,0 +1,19 @@
+﻿@page
+@model Task8_dotNET.Pages.GifsModel
+
+@{
+    ViewData["Title"] = "Gifs";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Gifs</h2>
+
+
+@foreach (var item in Model.Gif) {
+<div class="img-responsive">
+    <video autoplay muted loop>
+        <source src="@Url.Content(item.Url)" type="video/mp4" />
+    </video>
+    <p>@item.Title</p>
+</div>
+}
